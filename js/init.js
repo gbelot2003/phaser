@@ -10,11 +10,6 @@ const config = {
     },
     physics: {
         default: "arcade",
-        arcade: {
-            gravity: {
-                y: 500
-            }
-        }
     }
 }
 
@@ -25,20 +20,26 @@ function preload (){
 }
 
 function create (){
-    this.pajaro = this.add.image(50, 100, "bird");
+    this.pajaro = this.physics.add.image(50, 100, "bird");
     // this.pajaro.setScale(2);
     // this.pajaro.flipX = false;
     //this.pajaro.setAngle(0);
     // this.pajaro.setOrigin(0)
-    //this.pajaro.setCollideWorldBounds(true);
+    this.pajaro.setCollideWorldBounds(true);
     //this.pajaro.setBounce(0.5);
     //this.pajaro.setVelocity(50, 0)
+    //this.pajaro.setAcceleration(100, 0)
 
     // this.input.keyboard.on('keydown-RIGHT', (event) => {
     //     console.log(event)
     //     this.pajaro.setAngle(0);
     //     this.pajaro.flipX = false;
-    //     this.pajaro.x++ * 2;
+    //     this.pajaro.setAcceleration(100, 0)
+    // });
+
+    // this.input.keyboard.on('keyup-RIGHT', (event) => {
+    //     this.pajaro.setAcceleration(0, 0)
+    //     this.pajaro.setVelocity(0)
     // });
 
     // this.input.keyboard.on('keydown-LEFT', (event) => {
@@ -62,9 +63,34 @@ function create (){
     //     this.pajaro.setAngle(90);
     // });
 
-    //this.cursor = this.input.keydown.createCursorKeys();
+    this.cursor = this.input.keyboard.createCursorKeys();
 }
 
 function update (time, delta){
- 
+    if(this.cursor.right.isDown){
+        this.pajaro.x++
+        this.pajaro.flipX = false;
+        this.pajaro.setAngle(0);
+    }
+
+    if(this.cursor.left.isDown){
+        this.pajaro.x--
+        this.pajaro.flipX = true;
+        this.pajaro.setAngle(0);
+    }
+
+    if(this.cursor.up.isDown){
+        this.pajaro.flipX = false
+        this.pajaro.setAngle(-90);
+        this.pajaro.y--
+    }
+
+
+    if(this.cursor.down.isDown){
+        this.pajaro.flipX = false
+        this.pajaro.setAngle(90);
+        this.pajaro.y++
+    }
+
+
 }
