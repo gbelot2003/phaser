@@ -1,4 +1,6 @@
-class SceneA extends Phaser.Scene {
+import SceneC from "./sceneC.js";
+
+export default class SceneA extends Phaser.Scene {
 
     constructor() {
         super({
