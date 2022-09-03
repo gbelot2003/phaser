@@ -34,37 +34,37 @@ function create (){
     //this.pajaro.setBounce(0.5);
     //this.pajaro.setVelocity(50, 0)
 
-    this.input.keyboard.on('keydown-RIGHT', (event) => {
-        console.log(event)
-        this.pajaro.setAngle(0);
-        this.pajaro.flipX = false;
-        this.pajaro.x++ * 2;
-    });
+    // this.input.keyboard.on('keydown-RIGHT', (event) => {
+    //     console.log(event)
+    //     this.pajaro.setAngle(0);
+    //     this.pajaro.flipX = false;
+    //     this.pajaro.x++ * 2;
+    // });
 
-    this.input.keyboard.on('keydown-LEFT', (event) => {
-        console.log(event)
-        this.pajaro.flipX = true;
-        this.pajaro.setAngle(0);
-        this.pajaro.x--
-    });
+    // this.input.keyboard.on('keydown-LEFT', (event) => {
+    //     console.log(event)
+    //     this.pajaro.flipX = true;
+    //     this.pajaro.setAngle(0);
+    //     this.pajaro.x--
+    // });
 
-    this.input.keyboard.on('keydown-UP', (event) => {
-        console.log(event)
-        this.pajaro.flipX = false;
-        this.pajaro.y--
-        this.pajaro.setAngle(-90);
-    });
+    // this.input.keyboard.on('keydown-UP', (event) => {
+    //     console.log(event)
+    //     this.pajaro.flipX = false;
+    //     this.pajaro.y--
+    //     this.pajaro.setAngle(-90);
+    // });
 
-    this.input.keyboard.on('keydown-DOWN', (event) => {
-        console.log(event)
-        this.pajaro.flipX = false;
-        this.pajaro.y++
-        this.pajaro.setAngle(90);
-    });
+    // this.input.keyboard.on('keydown-DOWN', (event) => {
+    //     console.log(event)
+    //     this.pajaro.flipX = false;
+    //     this.pajaro.y++
+    //     this.pajaro.setAngle(90);
+    // });
 
-
+    //this.cursor = this.input.keydown.createCursorKeys();
 }
 
 function update (time, delta){
-    //this.pajaro.x++
+ 
 }
